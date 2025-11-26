@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Books } from './libary/Books';
-import { Conditions } from './libary/Conditions'; 
+import { Conditions } from './libary/Conditions';
 import { ListJewishBooks } from './libary/listjewishBooks';
 import './App.css';
 import { Writer } from './libary/writer';
@@ -10,7 +10,7 @@ function App() {
     const [showBooks, setShowBooks] = useState(false);
     const [name, setName] = useState('');
     const [isNameInputVisible, setIsNameInputVisible] = useState(true);
-    let temp = '';
+    let nameInput = '';
 
     const toggleWriterVisibility = () => {
         setShowWriter(!showWriter);
@@ -21,7 +21,7 @@ function App() {
     };
 
     const handleNameChange = (n) => {
-        temp = n;
+        nameInput = n;
     };
 
     const toggleNameInputVisibility = () => {
@@ -29,18 +29,20 @@ function App() {
     };
 
     const addName = () => {
-        setName(temp);
+        setName(nameInput);
         toggleNameInputVisibility();
     };
 
     return (
         <div>
-            <Books color="#5656be" />
+            <Books color="#be80b7ff" />
             <Conditions />
             <h1>{name} שלום</h1>
             {isNameInputVisible && (
                 <>
-                    <input type="text" placeholder='הכנס שם' onChange={event => handleNameChange(event.target.value)} />
+                    <input type="text" placeholder='הכנס שם'
+                        onChange={event => handleNameChange(event.target.value)}
+                    />
                     <button onClick={addName}>keeping</button>
                 </>
             )}
@@ -50,8 +52,10 @@ function App() {
             <button onClick={toggleBooksVisibility}>
                 {showBooks ? 'להסתרת הספרים' : 'להצגת הספרים'}
             </button>
-            {showBooks && <ListJewishBooks />}
-            {showWriter && <Writer />}
+         
+            {showBooks&& <ListJewishBooks />}
+            {showWriter&&<Writer />}
+            
         </div>
     );
 }
