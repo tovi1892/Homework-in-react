@@ -1,5 +1,9 @@
-export function Conditions() {
-    return (<p>
+export function Conditions(props) {
+    const color = props.color;
+    const myStyle = {
+        backgroundColor: color,
+    };
+    return (<p style={myStyle}> 
         תנאים כלליים להשאלה<br></br>
         הרשמה ורישום: יש להירשם לספרייה כדי לקבל כרטיס קורא. בדרך כלל זה כרוך בהצגת תעודת זהות, ונדרש להיות בגיל 18 ומעלה, כפי שמצוין ב- אתר הספרייה המרכזית בחולון.<br></br>
         תושבי הרשות המקומית: ההשאלה לתושבים היא בחינם, ללא תשלום דמי מנוי, בהתאם לחוק.<br></br>

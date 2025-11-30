@@ -36,7 +36,7 @@ function App() {
     return (
         <div>
             <Books color="#be80b7ff" />
-            <Conditions />
+            <Conditions  color="#be80b7ff" />
             <h1>{name} שלום</h1>
             {isNameInputVisible && (
                 <>

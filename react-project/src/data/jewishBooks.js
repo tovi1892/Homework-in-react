@@ -1,3 +1,4 @@
+
 const childrenBooks = [
     {
         title: "The Very Hungry Caterpillar",
@@ -29,6 +30,17 @@ const childrenBooks = [
     }
 ];
 
-export const getBook  = () => {
-    return childrenBooks;
+// export const getBook  = () => {
+//     return childrenBooks;
+// }
+export const getBook = () => {
+    return new Promise((resolve) => {
+        resolve(childrenBooks);
+    })
+}
+
+
+export const addNewTask = (Books) => {
+    childrenBooks.push(Books);
+    return Promise.resolve([...childrenBooks]);
 }
