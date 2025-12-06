@@ -30,9 +30,6 @@ const childrenBooks = [
     }
 ];
 
-// export const getBook  = () => {
-//     return childrenBooks;
-// }
 export const getBook = () => {
     return new Promise((resolve) => {
         resolve(childrenBooks);
@@ -40,7 +37,7 @@ export const getBook = () => {
 }
 
 
-export const addNewTask = (Books) => {
+export const addNewBook = (Books) => {
     childrenBooks.push(Books);
     return Promise.resolve([...childrenBooks]);
 }
